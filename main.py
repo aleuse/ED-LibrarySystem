@@ -55,5 +55,18 @@ library_system.update_state(book4, "borrowed")
 # for book in library_system.search_borrowed_books():
 #     print(book.name, book.author)
 
-book1.num_borrowed_books = 3
-library_system.show_popular_books_by_category()
+# for book in library_system.search_available_books():
+#     print(book.name, book.author)
+
+# library_system.show_borrowed_books_by_category("Ciencia ficción")
+# library_system.show_borrowed_books_by_category("Clásico")
+# library_system.show_borrowed_books_by_category("Realismo mágico")
+# library_system.show_borrowed_books_by_category("Drama")
+
+library_system.show_available_books_by_category("Ciencia ficción")
+library_system.show_available_books_by_category("Clásico")
+library_system.show_available_books_by_category("Realismo mágico")
+library_system.show_available_books_by_category("Drama")
+
+# book1.num_borrowed_books = 3
+# library_system.show_popular_books_ordered_by_category()

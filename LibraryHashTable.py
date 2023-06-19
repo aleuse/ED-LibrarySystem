@@ -50,7 +50,6 @@ class LibraryHashTable:
         
         return books_in_category
         
-
     def search_by_author(self, author):
         books_of_author = []
         for tree in self.table:
@@ -116,8 +115,44 @@ class LibraryHashTable:
                 if book.state == "borrowed":
                     borrowed_books.append(book)
         return borrowed_books
+    
+    def search_available_books(self):
+        available_books = []
+        for tree in self.table:
+            books = tree.in_order()
+            for book in books:
+                if book.state == "available":
+                    available_books.append(book)
+        return available_books
+    
+    def show_borrowed_books_by_category(self, category):
+        borrowed_books = []
+        index = self.hash_func(category)
+        tree = self.table[index]
+        for book in tree.in_order():
+            if book.category == category:
+                if book.state == "borrowed":
+                    borrowed_books.append(book)        
+        print(f"Category: {category}")
+        for book in borrowed_books:
+            print(f"Book: {book.name}")
+        print()
+        
+    
+    def show_available_books_by_category(self, category):
+        available_books = []
+        index = self.hash_func(category)
+        tree = self.table[index]
+        for book in tree.in_order():
+            if book.category == category:
+                if book.state == "available":
+                    available_books.append(book)        
+        print(f"Category: {category}")
+        for book in available_books:
+            print(f"Book: {book.name}")
+        print()
 
-    def show_popular_books_by_category(self):
+    def show_popular_books_ordered_by_category(self):
         popular_books = defaultdict(list)
         for tree in self.table:
             books = tree.in_order()
@@ -130,3 +165,4 @@ class LibraryHashTable:
             for book, borrows in books:
                 print(f"Book: {book} - Number of Borrows: {borrows}")
             print()
+            
