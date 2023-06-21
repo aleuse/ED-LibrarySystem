@@ -46,7 +46,7 @@ library_system.update_state(book4, "borrowed")
 # most_borrowed_category, borrows = library_system.get_most_borrowed_category()
 # print(most_borrowed_category, borrows)
 
-# least_borrowed_categories = library_system.get_least_borrowed_category()
+# least_borrowed_categories = library_system.get_least_borrowed_categories()
 # for category in least_borrowed_categories:
 #     print(category[0], category[1])
 

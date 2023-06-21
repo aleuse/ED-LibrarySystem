@@ -84,7 +84,7 @@ class LibraryHashTable:
                 
         return most_borrowed_category, max_borrows
 
-    def get_least_borrowed_category(self):
+    def get_least_borrowed_categories(self):
         least_borrowed_categories = []
         least_borrows = float("inf")
         for category in self.category_count.keys():
