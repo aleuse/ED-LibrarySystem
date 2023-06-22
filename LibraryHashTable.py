@@ -101,7 +101,7 @@ class LibraryHashTable:
                 least_borrowed_categories.append([category, borrows])
         return least_borrowed_categories
 
-    def show_books_categories(self):
+    def show_num_books_categories(self):
         categories = sorted(self.category_count.keys(), key = lambda x: self.category_count[x], reverse = True)
         for category in categories:
             num_books = self.category_count[category]
